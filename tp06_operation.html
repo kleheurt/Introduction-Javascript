@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </script>
+    <script>
+        function valider() {
+            let x = document.querySelector("#form1").value;
+            let y = document.querySelector("#form2").value;
+            let op = document.querySelector("#op").value;
+            let res = document.querySelector("#resultat");
+            if ((isNaN(x)) || (isNaN(y))) {
+                res.innerHTML = "<strong style='color:red;'> Vous devez saisir un nombre. </strong>";
+            }
+            else {
+                let s = "";
+                switch(op){
+                    case '+':
+                        s = "Le résultat de l'addition est : "+(Number(x) + Number(y));
+                        break;
+                    case '-':
+                        s = "Le résultat de la soustraction est : "+(Number(x) - Number(y));
+                        break;
+                    case '*':
+                        s = "Le résultat de la multiplication est : "+(Number(x) * Number(y));
+                        break;
+                    case '/':
+                        s =  "Le résultat de la division est : "+(Number(x) / Number(y));
+
+                }
+                res.innerHTML = s;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="form1">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="form2">
+    <input type="button" onclick="valider()" value="Valider">
+    <section id="resultat">
+        0
+    </section>
+</body>
+
+</html>

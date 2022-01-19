@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        function valider(){
+            let nom = document.querySelector("#nom").value;
+            let prenom = document.querySelector("#prenom").value;
+            let ddn = document.querySelector("#ddn").value;
+            let msg = document.querySelector("#message");
+            if(nom == "nom" || prenom == "prénom" || ddn == "ddn"){
+                msg.innerHTML = "<strong style='color:red;'> Saisie incorrecte </strong>";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="nom" value="nom">
+    <input type="text" id="prenom" value="prénom">
+    <input type="text" id="ddn" value="ddn">
+    <input type="button" onclick="valider()" value="Valider">
+    <section id="message"> </section>
+</body>
+</html>
