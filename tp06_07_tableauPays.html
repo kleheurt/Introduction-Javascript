@@ -11,7 +11,7 @@
     <script src='tp06_07_tableauPays.js'></script>
 </head>
 
-<body onload="main()">
+<body onload="main(0,Number.MAX_VALUE)">
     <div class="container container-md" >
         <h1 id="titre"></h1>
         <table class="table table-striped table-hover table-bordered">
@@ -23,9 +23,24 @@
                     <th scope="col">%</th>
                 </tr>
                 <tr class="table-light table-borderless">
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
+                    <th colspan="4">
+                        <form>
+                            <div class="row">
+                              <div class="col-1">
+                                <input type="text" class="form-control" placeholder="Min" id="min">
+                              </div>
+                              <div class="col-1">
+                                <input type="text" class="form-control" placeholder="Max" id="max">
+                              </div>
+                              <div class="col-auto">
+                                <input type="button" class="btn btn-primary mb-2" onclick="filtrer()" value="Filtrer">
+                              </div>
+                              <div class="col-auto" id="msg">
+                              </div>
+                            </div>
+                          </form>
+                    </th>
+                   
                 </tr>
             </thead>
             <tbody id="pays">
