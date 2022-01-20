@@ -35,13 +35,11 @@ function traitement(data){
 }
 
 function alerte1(){
-    let msg = document.querySelector("#msg");
-    msg.innerHTML += "<div class='alert alert-danger' role='alert'>Min ne peut être supérieur ou égal à Max</div>"
+    return "<div class='alert alert-danger' role='alert'>Min ne peut être supérieur ou égal à Max</div>"
 }
 
 function alerte2(){
-    let msg = document.querySelector("#msg");
-    msg.innerHTML += "<div class='alert alert-danger' role='alert'>Saisir des nombres positifs</div>"
+    return "<div class='alert alert-danger' role='alert'>Saisir des nombres positifs</div>"
 }
 
 function filtrer(){
@@ -54,8 +52,8 @@ function filtrer(){
     if(min == "") min = 0;
     if(max == "") max = Number.MAX_VALUE;
 
-    if(min >= max) alerte1();
-    if(min < 0 || max < 0)  alerte2();
+    if(min >= max) msg.innerHTML += alerte1();
+    if(min < 0 || max < 0)  msg.innerHTML += alerte2();
     
     main(min,max);
 }
